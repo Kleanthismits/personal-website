@@ -18,17 +18,16 @@
 <body>
     <main>
         <header>
-
             <nav class="nav-wrapper grey darken-3">
                 <a href="#" class="sidenav-trigger" data-target="mobile-menu">
                     <i class="material-icons">menu</i>
                 </a>
                 <ul class="hide-on-med-and-down">
-                    <li><a href="#stats" onclick="">Coding Stats</a></li>
-                    <li><a href="#services">Experience</a></li>
-                    <li><a href="#contact">Education</a></li>
-                    <li><a href="#contact">Education</a></li>
-                    <li><a href="#contact">About me</a></li>
+                    <li><a href="#" id="stats" class="scroll_source" >Coding Stats</a></li>
+                    <li><a href="#" id="experience" class="scroll_source">Experience</a></li>
+                    <li><a href="#" id="education" class="scroll_source">Education</a></li>
+                    <!-- <li><a href="#projects" class="scroll_source">Education</a></li> -->
+                    <li><a href="#" id = "aboutme" class="scroll_source">About me</a></li>
                     <li>
                         <a href="https://github.com/Kleanthismits" class="btn-floating btn-small red darken-4 tooltipped " data-tooltip="Github">
                             <i class="fab fa-github"></i>
@@ -70,9 +69,9 @@
                 </div>
             </div>
         </section>
-        <div class="" id="stats"></div>
+        <div class="" id="stats-section"></div>
         <section>
-            <h2>My Coding Activity & Stats</h2>
+            <h2>My Coding Activity & Stats <span id="codersrank">(Powered by <a href="https://codersrank.io/">CODERSRANK.IO</a>)</span></h2>
 
             <!-- Summary widget -->
             <codersrank-summary username="kleanthismits" show-avatar="false" show-header="true" branding="false"></codersrank-summary>
@@ -85,14 +84,14 @@
             <h2>Recent Projects</h2>
 
         </section> -->
-        <section>
+        <section id="experience-section">
             <h2>Work Experience</h2>
 
             <!-- Work experience widget -->
             <codersrank-work-experience username="kleanthismits" logos max-items="4" branding="false"></codersrank-work-experience>
         </section>
 
-        <section>
+        <section id="education-section">
             <h2>Education</h2>
 
             <!-- Education widget -->
@@ -100,7 +99,9 @@
         </section>
 
         <footer>
-            <!-- Generic footer copy -->
+            <div class="footer-copyright grey darken-4">
+                <div class=" center-align">&copy; <span id="current_year"></span> Kleanthis Mitsioulis</div>
+              </div>
         </footer>
     </main>
 
@@ -113,7 +114,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script>
     </script>
-    <script src="main.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>

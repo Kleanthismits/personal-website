@@ -1,0 +1,74 @@
+@media only screen and (max-width: 800px) {
+  .hide-on-800-and-down {
+    display: none !important;
+  }
+  .intro {
+      margin-top:40px;
+  }
+  h1 {
+    font-size: 1.8em !important;
+  }
+  h2 {
+    font-size: 1.4em !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .avatar {
+    width: 120px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    display: block;
+  }
+  codersrank-portfolio,
+  codersrank-work-exprerience,
+  codersrank-education {
+    --grid-columns: 1;
+    --item-spacing: 8px;
+    --logo-size: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  h1 {
+    font-size: 1.2em !important;
+  }
+  h2 {
+    font-size: 1.1em !important;
+  }
+  main {
+    padding: 0px !important;
+  }
+  .codersrank-work-experience-logo {
+    display: none !important;
+  }
+  .widget + .widget {
+    margin-top: 8px;
+  }
+  .subtitle {
+    font-size: 0.9em;
+  }
+  .flag {
+    width: 10px;
+  }
+  codersrank-summary {
+    --badge-margin: 8px;
+  }
+  codersrank-activity {
+    --svg-width: 640px;
+  }
+}
+
+@media (min-width: 800px) {
+  .fixed-action-btn {
+    display: none;
+  }
+}

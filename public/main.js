@@ -4,18 +4,33 @@ $(document).ready(function () {
   $(".tabs").tabs();
   $(".tooltipped").tooltip();
   $(".scrollspy").scrollSpy();
+  $(".dropdown-trigger").dropdown();
   $("#current_year").text(new Date().getFullYear());
-  $("body").click((e) => {
+  $(".fixed-action-btn").floatingActionButton();
+  $(".scroll_source").click((e) => {
+    e.preventDefault();
     var source_class = $(e.target).attr("class");
-    switch (source_class) {
-      case "scroll_source":
-        scrollToElement(e.target.id + "-section");
-        break;
-      default:
-        break;
-    }
+    scrollToElement(e.target.id + "-section");
   });
   $("#years-dev").text(calculateYearDiff());
+
+  if ($(window).width() < 641) {
+    $("codersrank-work-experience").attr("logos", "false");
+    $("codersrank-skills-chart").attr("labels", "false");
+  } else {
+    $("codersrank-work-experience").attr("logos", "true");
+    $("codersrank-skills-chart").attr("labels", "true");
+  }
+
+  $(window).resize((e) => {
+    if ($(window).width() < 641) {
+      $("codersrank-work-experience").attr("logos", "false");
+      $("codersrank-skills-chart").attr("labels", "false");
+    } else {
+      $("codersrank-work-experience").attr("logos", "true");
+      $("codersrank-skills-chart").attr("labels", "true");
+    }
+  });
 });
 
 function calculateYearDiff() {
@@ -24,7 +39,6 @@ function calculateYearDiff() {
   let nowNew = new Date(now);
 
   let years = yearsDiff(begin, now);
-  console.log(years);
   let months = years * 12 + (nowNew.getMonth() - begin.getMonth());
 
   let monthsMod = months % 12;
@@ -47,6 +61,7 @@ function yearsDiff(d1, d2) {
 function scrollToElement(elementId) {
   //get the element
   var scroll_target = $("#" + elementId);
+  console.log(scroll_target);
   if (scroll_target.offset()) {
     //get the vertical distance of the element from the top of the page
     var verticalPositionOfElement = scroll_target.offset().top;

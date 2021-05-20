@@ -39,13 +39,14 @@ function calculateYearDiff() {
   let nowNew = new Date(now);
 
   let years = yearsDiff(begin, now);
-  let months = years * 12 + (nowNew.getMonth() - begin.getMonth());
+  let months = years * 12 + (nowNew.getMonth()+1 - begin.getMonth());
 
   let monthsMod = months % 12;
+
   if (monthsMod > 7) {
-    return years;
+    return years+1;
   } else if (monthsMod < 4) {
-    return years - 1;
+    return years;
   } else {
     return years + 0.5;
   }
